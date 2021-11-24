@@ -10,11 +10,14 @@ class TestPub(unittest.TestCase):
         self.pub = Pub("The Prancing Pony", 100.00)
         self.drink1 = Drink("pint of beer", 4.50, True, 3)
         self.drink2 = Drink("still water", 0, False, 0)
+        self.food1 = Food("Pie", 5.50, 3)
+        self.food2 = Food("Sandwich", 4, 2)
         self.customer1 = Customer(1, 0, 22.50, 19)
         self.customer2 = Customer(2, 0, 15, 18)
         self.customer3 = Customer(3, 0, 11.5, 17)
         self.customer4 = Customer(3, 11, 11.5, 20)
         self.pub.drinks_list = [self.drink1, self.drink2]
+        self.pub.food_list = [self.food1, self.food2]
     
 
     
@@ -61,3 +64,9 @@ class TestPub(unittest.TestCase):
         self.pub.sell_drink(self.drink1, self.customer3)
         self.assertEqual(3, self.customer1.drunkness)
         self.assertEqual(0, self.customer3.drunkness)
+
+    def test_sell_food(self):
+        self.pub.sell_food(self.food1, self.customer4)
+        self.assertEqual(8, self.customer4.drunkness)
+        self.assertEqual(6, self.customer4.wallet)
+        self.assertEqual(105.5, self.pub.till)

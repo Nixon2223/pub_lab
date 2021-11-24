@@ -35,5 +35,9 @@ class Pub:
                 soft_drinks.append(drink.name)
         return soft_drinks
 
+    def sell_food(self, food, customer):
+        customer.decrease_wallet(food.price)
+        self.increase_till(food.price)
+        customer.drunkness -= food.rejuvenation_level
     
     
