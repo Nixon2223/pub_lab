@@ -29,7 +29,7 @@ class TestPub(unittest.TestCase):
         self.pub.increase_till(10)
         self.assertEqual(110, self.pub.till)
 
-    # def test_sell_drink(self, drink, customer):
-    #     sell_drink(drink, customer)
-    #     self.assertEqual(104.5, self.pub.till)
-    #     self.assertEqual(18, self.customer1.wallet)
+    def test_sell_drink(self):
+        self.pub.sell_drink(self.drink, self.customer)
+        self.assertEqual(104.5, self.pub.till)
+        self.assertEqual(18, self.customer.wallet)

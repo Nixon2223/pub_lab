@@ -11,8 +11,8 @@ class Pub:
         return len(self.drinks_list)
 
     def sell_drink(self, drink, customer):
-        customer.wallet -= drink.price
-        self.till += self.drink.price
+        customer.decrease_wallet(drink.price)
+        self.increase_till(drink.price)
 
     def increase_till(self, amount):
         self.till += amount
