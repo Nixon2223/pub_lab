@@ -8,3 +8,8 @@ class TestFood(unittest.TestCase):
     
     def setUp(self):
         self.food = Food("Pie", 5.50, 3)
+    
+    def test_food_has_name(self):
+        self.assertEqual("Pie", self.food.name)
+
+    
