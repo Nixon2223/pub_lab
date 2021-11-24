@@ -11,7 +11,7 @@ class Pub:
         return len(self.drinks_list)
 
     def sell_drink(self, drink, customer):
-        if self.check_customer_age(customer) == True:
+        if self.check_customer_age(customer) == True and customer.drunkness < 10:
             customer.decrease_wallet(drink.price)
             self.increase_till(drink.price)
             customer.drunkness += drink.alcohol_units
@@ -33,4 +33,6 @@ class Pub:
             if drink.alcoholic_status == False:
                 soft_drinks.append(drink.name)
         return soft_drinks
+
+    
     
