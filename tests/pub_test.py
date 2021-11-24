@@ -19,7 +19,6 @@ class TestPub(unittest.TestCase):
         self.pub.drinks_list = [self.drink1, self.drink2]
         self.pub.food_list = [self.food1, self.food2]
         self.pub.stock_list = {
-
                                 "drinks": 
                                 {"pint of beer" : 20},
 
@@ -82,3 +81,9 @@ class TestPub(unittest.TestCase):
     def test_check_stock(self):
         self.assertEqual(20, self.pub.stock_list["drinks"]["pint of beer"])
         self.assertEqual(10, self.pub.stock_list["food"]["Pie"])
+
+    def test_if_stock_exists(self):
+        check1 = "fish"
+        check2 = "Pie"
+        self.assertEqual(False, self.pub.check_if_stock_exists(check1))
+        self.assertEqual(True, self.pub.check_if_stock_exists(check2))

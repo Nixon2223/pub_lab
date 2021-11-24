@@ -1,3 +1,6 @@
+from src.food import Food
+
+
 class Pub:
     def __init__(self, name, till):
         self.name = name
@@ -40,5 +43,22 @@ class Pub:
         customer.decrease_wallet(food.price)
         self.increase_till(food.price)
         customer.drunkness -= food.rejuvenation_level
+
+    def check_if_stock_exists(self, stock):
+            if stock in self.stock_list["food"] or stock in self.stock_list["drinks"]:
+                return True
+            else:
+                return False
+            
+        # if type(stock) == Food:
+
+
+        # elif type(stock) == Drink:
+
+    # def add_stock(self, stock):
+    #     self.stock[]
+    
+    # def adjust_stock(self, stock):
+    #     self.
     
     
