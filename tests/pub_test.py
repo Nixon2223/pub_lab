@@ -25,6 +25,10 @@ class TestPub(unittest.TestCase):
         self.pub.add_drink_to_list(new_drink)
         self.assertEqual(2, self.pub.count_drinks_list())
 
+    def test_increase_till(self):
+        self.pub.increase_till(10)
+        self.assertEqual(110, self.pub.till)
+
     # def test_sell_drink(self, drink, customer):
     #     sell_drink(drink, customer)
     #     self.assertEqual(104.5, self.pub.till)

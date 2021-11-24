@@ -14,3 +14,5 @@ class Pub:
         customer.wallet -= drink.price
         self.till += self.drink.price
 
+    def increase_till(self, amount):
+        self.till += amount
