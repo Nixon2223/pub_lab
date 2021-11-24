@@ -10,3 +10,6 @@ class TestDrink(unittest.TestCase):
 
     def test_drink_has_name(self):
         self.assertEqual("Tap Water", self.drink.name)
+    
+    def test_drink_has_alcoholic_status(self):
+        self.assertEqual(False, self.drink.alcoholic_status)
