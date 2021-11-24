@@ -8,3 +8,5 @@ class TestPub(unittest.TestCase):
 
     def test_pub_has_name(self):
         self.assertEqual("The Prancing Pony", self.pub.name)
+    
+    def
