@@ -8,7 +8,7 @@ class Pub:
         self.drinks_list.append(drink)
 
     def count_drinks_list(self):
-        return len(drinks_list)
+        return len(self.drinks_list)
 
     def sell_drink(self, drink, customer):
         customer.wallet -= drink.price
