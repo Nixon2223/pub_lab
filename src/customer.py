@@ -9,4 +9,4 @@ class Customer:
         self.wallet -= amount
 
     def increase_drunkness(self, amount):
-        self.belly += amount
+        self.drunkness += amount

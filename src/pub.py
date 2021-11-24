@@ -14,6 +14,7 @@ class Pub:
         if self.check_customer_age(customer) == True:
             customer.decrease_wallet(drink.price)
             self.increase_till(drink.price)
+            customer.drunkness += drink.alcohol_units
         else:
             return f"Please choose a soft drink: {(self.soft_drinks_list())}"
 
