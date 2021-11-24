@@ -7,9 +7,3 @@ class Customer:
     
     def decrease_wallet(self, amount):
         self.wallet -= amount
-    
-    def check_customer_age(self):
-        if self.age >= 18:
-            return True
-        else:
-            return False

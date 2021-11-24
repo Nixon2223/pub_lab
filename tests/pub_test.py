@@ -8,7 +8,9 @@ class TestPub(unittest.TestCase):
     def setUp(self):
         self.pub = Pub("The Prancing Pony", 100.00)
         self.drink = Drink("pint of beer", 4.50, True, 3)
-        self.customer = Customer(1, 0, 22.50, 18)
+        self.customer1 = Customer(1, 0, 22.50, 19)
+        self.customer2 = Customer(1, 0, 22.50, 18)
+        self.customer3 = Customer(1, 0, 22.50, 17)
         self.pub.drinks_list = [self.drink]
 
     def test_pub_has_name(self):
@@ -30,10 +32,11 @@ class TestPub(unittest.TestCase):
         self.assertEqual(110, self.pub.till)
 
     def test_sell_drink(self):
-        self.pub.sell_drink(self.drink, self.customer)
+        self.pub.sell_drink(self.drink, self.customer1)
         self.assertEqual(104.5, self.pub.till)
-        self.assertEqual(18, self.customer.wallet)
+        self.assertEqual(18, self.customer1.wallet)
     
     def test_check_customer_over_18(self):
-        self.assertEqual(True, self.customer.check_customer_age())
-
+        self.assertEqual(True, self.pub.check_customer_age(self.customer1))
+        self.assertEqual(True, self.pub.check_customer_age(self.customer2))
+        self.assertEqual(False, self.pub.check_customer_age(self.customer3))
