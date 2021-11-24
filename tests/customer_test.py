@@ -20,3 +20,7 @@ class TestCustomer(unittest.TestCase):
 
     def test_customer_has_belly(self):
         self.assertEqual(0,self.customer.belly)
+
+    def test_customer_belly_can_increase(self):
+        self.customer.increase_belly(1)
+        self.assertEqual(1,self.customer.belly)

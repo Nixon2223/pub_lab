@@ -8,3 +8,5 @@ class Customer:
     def decrease_wallet(self, amount):
         self.wallet -= amount
 
+    def increase_belly(self,amount):
+        self.belly += amount
