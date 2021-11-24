@@ -15,7 +15,7 @@ class Pub:
             customer.decrease_wallet(drink.price)
             self.increase_till(drink.price)
         else:
-            return "Please choose a soft drink: " + self.soft_drinks_list() 
+            return f"Please choose a soft drink: {(self.soft_drinks_list())}"
 
     def increase_till(self, amount):
         self.till += amount
@@ -29,7 +29,7 @@ class Pub:
     def soft_drinks_list(self):
         soft_drinks = []
         for drink in self.drinks_list:
-            if drink.alcohol_status == False:
-                soft_drinks.append(drink)
+            if drink.alcoholic_status == False:
+                soft_drinks.append(drink.name)
         return soft_drinks
     
