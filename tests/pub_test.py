@@ -90,5 +90,7 @@ class TestPub(unittest.TestCase):
     
     def test_adjust_stock(self):
         self.pub.adjust_stock("Pie", 5)
+        self.pub.adjust_stock("pint of beer", -1)
         self.assertEqual(15, self.pub.stock_list["food"]["Pie"])
+        self.assertEqual(19, self.pub.stock_list["drinks"]["pint of beer"])
 

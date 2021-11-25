@@ -54,5 +54,8 @@ class Pub:
         for key in self.stock_list["food"].keys():
             if key == stock:
                 self.stock_list["food"][key] = self.stock_list["food"][key] + amount
+        for key in self.stock_list["drinks"].keys():
+            if key == stock:
+                self.stock_list["drinks"][key] = self.stock_list["drinks"][key] + amount
     
     
