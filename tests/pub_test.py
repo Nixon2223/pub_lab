@@ -87,3 +87,8 @@ class TestPub(unittest.TestCase):
         check2 = "Pie"
         self.assertEqual(False, self.pub.check_if_stock_exists(check1))
         self.assertEqual(True, self.pub.check_if_stock_exists(check2))
+    
+    def test_adjust_stock(self):
+        self.pub.adjust_stock("Pie", 5)
+        self.assertEqual(15, self.pub.stock_list["food"]["Pie"])
+

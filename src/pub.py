@@ -50,15 +50,9 @@ class Pub:
             else:
                 return False
             
-        # if type(stock) == Food:
-
-
-        # elif type(stock) == Drink:
-
-    # def add_stock(self, stock):
-    #     self.stock[]
-    
-    # def adjust_stock(self, stock):
-    #     self.
+    def adjust_stock(self, stock, amount):
+        for key in self.stock_list["food"].keys():
+            if key == stock:
+                self.stock_list["food"][key] = self.stock_list["food"][key] + amount
     
     
