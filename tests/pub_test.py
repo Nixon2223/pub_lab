@@ -51,10 +51,13 @@ class TestPub(unittest.TestCase):
 
     def test_sell_drink(self):
         self.pub.sell_drink(self.drink1, self.customer1)
-        self.pub.sell_drink(self.drink1,self.customer4)
+        self.pub.sell_drink(self.drink1, self.customer4)
+        self.pub.sell_drink(self.drink2, self.customer3)
         self.assertEqual(104.5, self.pub.till)
         self.assertEqual(18, self.customer1.wallet)
         self.assertEqual(11,self.customer4.drunkness)
+        self.assertEqual(99 ,self.pub.stock_list["drinks"]["still water"])
+        self.assertEqual(19 ,self.pub.stock_list["drinks"]["pint of beer"])
 
     def test_sell_to_underage(self):
         self.pub.sell_drink(self.drink1, self.customer3)
@@ -93,7 +96,9 @@ class TestPub(unittest.TestCase):
     def test_adjust_stock(self):
         self.pub.adjust_stock("Pie", 5)
         self.pub.adjust_stock("pint of beer", -1)
+        self.pub.adjust_stock("still water", -1)
         self.assertEqual(15, self.pub.stock_list["food"]["Pie"])
         self.assertEqual(19, self.pub.stock_list["drinks"]["pint of beer"])
+        self.assertEqual(99, self.pub.stock_list["drinks"]["still water"])
     
 
