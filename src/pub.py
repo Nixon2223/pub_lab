@@ -60,4 +60,17 @@ class Pub:
             if key == stock:
                 self.stock_list["drinks"][key] = self.stock_list["drinks"][key] + amount
     
+    def get_total_stock_value(self):
+        total = 0
+        for key in self.stock_list["drinks"]:
+            for drink in self.drinks_list:
+                if key == drink.name:
+                    total += drink.price * self.stock_list["drinks"][drink.name]
+        for key in self.stock_list["food"]:
+            for food in self.food_list:
+                if key == food.name:
+                    total += food.price * self.stock_list["food"][food.name]
+        return total
+
+
     

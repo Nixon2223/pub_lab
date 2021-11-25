@@ -11,7 +11,7 @@ class TestPub(unittest.TestCase):
         self.drink1 = Drink("pint of beer", 4.50, True, 3)
         self.drink2 = Drink("still water", 0, False, 0)
         self.food1 = Food("Pie", 5.50, 3)
-        self.food2 = Food("Sandwich", 4, 2)
+        self.food2 = Food("sandwich", 4, 2)
         self.customer1 = Customer(1, 0, 22.50, 19)
         self.customer2 = Customer(2, 0, 15, 18)
         self.customer3 = Customer(3, 0, 11.5, 17)
@@ -101,4 +101,6 @@ class TestPub(unittest.TestCase):
         self.assertEqual(19, self.pub.stock_list["drinks"]["pint of beer"])
         self.assertEqual(99, self.pub.stock_list["drinks"]["still water"])
     
+    def test_total_stock_price(self):
+        self.assertEqual(177, self.pub.get_total_stock_value())
 
