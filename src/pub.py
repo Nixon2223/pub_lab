@@ -16,10 +16,11 @@ class Pub:
         return len(self.drinks_list)
 
     def sell_drink(self, drink, customer):
-        if self.check_customer_age(customer) == True and customer.drunkness < 10:
+        if self.check_customer_age(customer) == True and customer.drunkness < 10 or drink.alcoholic_status == False:
             customer.decrease_wallet(drink.price)
             self.increase_till(drink.price)
             customer.drunkness += drink.alcohol_units
+            self.adjust_stock(drink, -1)
         else:
             return f"Please choose a soft drink: {(self.soft_drinks_list())}"
 
@@ -43,6 +44,7 @@ class Pub:
         customer.decrease_wallet(food.price)
         self.increase_till(food.price)
         customer.drunkness -= food.rejuvenation_level
+        self.adjust_stock(food, -1)
 
     def check_if_stock_exists(self, stock):
             if stock in self.stock_list["food"] or stock in self.stock_list["drinks"]:

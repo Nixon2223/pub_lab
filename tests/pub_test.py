@@ -18,12 +18,14 @@ class TestPub(unittest.TestCase):
         self.customer4 = Customer(3, 11, 11.5, 20)
         self.pub.drinks_list = [self.drink1, self.drink2]
         self.pub.food_list = [self.food1, self.food2]
-        self.pub.stock_list = {
+        self.pub.stock_list =   {
                                 "drinks": 
-                                {"pint of beer" : 20},
+                                {"pint of beer" : 20,
+                                "still water" : 100},
 
                                 "food": 
-                                {"Pie" : 10} 
+                                {"Pie" : 10,
+                                 "sandwich" : 8}
         }
     
 
@@ -93,4 +95,5 @@ class TestPub(unittest.TestCase):
         self.pub.adjust_stock("pint of beer", -1)
         self.assertEqual(15, self.pub.stock_list["food"]["Pie"])
         self.assertEqual(19, self.pub.stock_list["drinks"]["pint of beer"])
+    
 
