@@ -103,4 +103,8 @@ class TestPub(unittest.TestCase):
     
     def test_total_stock_price(self):
         self.assertEqual(177, self.pub.get_total_stock_value())
+    
+    def test_pub_mark_up(self):
+        self.pub.mark_up(1.1)
+        self.assertEqual(194.7, self.pub.get_total_stock_value())
 

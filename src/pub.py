@@ -72,5 +72,8 @@ class Pub:
                     total += food.price * self.stock_list["food"][food.name]
         return total
 
-
-    
+    def mark_up(self, mark_up):
+            for drink in self.drinks_list:
+                drink.price *= mark_up
+            for food in self.food_list:
+                food.price *= mark_up
